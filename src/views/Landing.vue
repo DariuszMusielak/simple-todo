@@ -47,11 +47,11 @@ export default {
     return {
       newTodo: '',
       todos: [],
-      loading: true
+      loading: true,
     };
   },
   methods: {
-    fetchData: debounce(function () {
+    fetchData: debounce(function call() {
       this.loading = true;
       axios.get(`${API}/todos`)
         .then((response) => {
@@ -74,18 +74,17 @@ export default {
         });
     },
     updateTodo(todo) {
-      axios.patch(
-        `${API}/todos/${todo.id}`, {
-          description: todo.description,
-          done: todo.done,
-          deadline: todo.deadline,
+      axios.patch(`${API}/todos/${todo.id}`, {
+        description: todo.description,
+        done: todo.done,
+        deadline: todo.deadline,
       }).then((response) => {
         console.log(response);
       }).catch((error) => {
         console.log(error);
       });
     },
-    addTodo: debounce(function (description) {
+    addTodo: debounce(function call(description) {
       axios.post(`${API}/todos`, {
         description,
         done: false,

@@ -33,7 +33,7 @@ export default {
     deleteTodo(todo) {
       this.$emit('delete-todo', todo);
     },
-    updateTodo(e) {
+    updateTodo() {
       this.todo.done = !this.todo.done;
       this.$emit('update-todo', this.todo);
     },

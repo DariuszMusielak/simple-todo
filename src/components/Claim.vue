@@ -26,8 +26,8 @@ export default {
     },
   },
   computed: {
-    headerText: function () {
-      return true ? 'TODO' : 'YOUR TODOS';
+    headerText: function call() {
+      return this.value ? 'TODO' : 'YOUR TODOS';
     },
   },
 };
